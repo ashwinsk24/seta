@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:seta/responsive/mobile_screen_layout.dart';
 import 'package:seta/responsive/responsive_layout_screen.dart';
 import 'package:seta/responsive/web_screen_layout.dart';
+import 'package:seta/screens/login_screen.dart';
 import 'package:seta/utils/colors.dart';
 
 void main() async {
@@ -35,10 +36,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: mobileBackgroundColor,
       ),
-      home: const ResponsiveLayout(
+      /* home: const ResponsiveLayout(
         mobileScreenLayout: MobileScreenLayout(),
         webScreenLayout: WebScreenLayout(),
-      ),
+      ),*/
+      home: LoginScreen(),
     );
   }
 }
