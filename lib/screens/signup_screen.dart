@@ -3,16 +3,18 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:seta/utils/colors.dart';
 import 'package:seta/widgets/text_field_input.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _bioController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
 
   @override
   void dispose() {
@@ -20,6 +22,8 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
     _emailController.dispose();
     _passwordController.dispose();
+    _bioController.dispose();
+    _usernameController.dispose();
   }
 
   @override
@@ -36,9 +40,37 @@ class _LoginScreenState extends State<LoginScreen> {
               SvgPicture.asset(
                 'assets/seta_logo.svg',
                 color: primaryColor,
-                height: 94,
+                height: 84,
               ), //image
-              const SizedBox(height: 64),
+              const SizedBox(height: 54),
+              //circular widget for dp
+              Stack(
+                children: [
+                  const CircleAvatar(
+                    radius: 64,
+                    backgroundImage: NetworkImage(
+                        'https://raw.githubusercontent.com/Chackoseb/portfolio/main/assets/images/About.jpg'),
+                  ),
+                  Positioned(
+                    bottom: -10,
+                    left: 80,
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.add_a_photo,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              //username textfield
+              TextFieldInput(
+                hintText: 'Enter your username',
+                textInputType: TextInputType.text,
+                textEditingController: _usernameController,
+              ),
+              const SizedBox(height: 20),
               //text email
               TextFieldInput(
                 hintText: 'Enter your email',
@@ -52,6 +84,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 textInputType: TextInputType.text,
                 textEditingController: _passwordController,
                 isPass: true,
+              ),
+              const SizedBox(height: 20),
+              //bio textfield
+              TextFieldInput(
+                hintText: 'Enter your bio',
+                textInputType: TextInputType.text,
+                textEditingController: _bioController,
               ),
               const SizedBox(height: 20),
               //login button
@@ -68,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       color: blueColor),
-                  child: const Text('Log in'),
+                  child: const Text('Sign up'),
                 ),
               ),
               const SizedBox(height: 12),
