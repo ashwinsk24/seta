@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "391759904308",
+    "project_id": "seta2022-9aaed",
+    "storage_bucket": "seta2022-9aaed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:391759904308:android:4c0b3db202da4301125461",
+        "android_client_info": {
+          "package_name": "com.quadchef.seta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "391759904308-g84k3idu2p23gam6i5j259hp463pijum.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.quadchef.seta",
+            "certificate_hash": "32528155c3c487f874e54b864c8389ded8af83eb"
+          }
+        },
+        {
+          "client_id": "391759904308-jdv8iea65iujg4bg59en57mh17ggv02g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS1qwl6r5BfhjFqSo2_CXax5J5YKUx8U8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "391759904308-jdv8iea65iujg4bg59en57mh17ggv02g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
