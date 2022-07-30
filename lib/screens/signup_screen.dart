@@ -110,7 +110,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   child: const Text('Sign up'),
                 ),
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 6),
               Flexible(flex: 2, child: Container()),
               // signup!
               Row(
@@ -137,7 +137,8 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                   ),
                 ],
-              )
+              ),
+              const SizedBox(height: 6),
             ],
           ),
         ),
