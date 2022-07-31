@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:seta/utils/colors.dart';
 
@@ -15,7 +16,7 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
       body: Center(
         child: Text('mobile'),
       ),
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: CupertinoTabBar(
         backgroundColor: mobileBackgroundColor,
         items: [
           BottomNavigationBarItem(
