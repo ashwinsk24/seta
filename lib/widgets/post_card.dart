@@ -73,6 +73,14 @@ class PostCard extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.35,
+            width: double.infinity,
+            child: Image.network(
+              'https://images.unsplash.com/photo-1631846966251-5fc9d726d805?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDZ8Ym84alFLVGFFMFl8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60',
+              fit: BoxFit.cover,
+            ),
             //IMAGE
           ),
         ],
