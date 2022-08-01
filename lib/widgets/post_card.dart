@@ -11,6 +11,7 @@ class PostCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Column(
         children: [
+          //HEADER
           Container(
             padding: EdgeInsets.symmetric(
               vertical: 4,
@@ -72,6 +73,7 @@ class PostCard extends StatelessWidget {
                 ),
               ],
             ),
+            //IMAGE
           ),
         ],
       ),
