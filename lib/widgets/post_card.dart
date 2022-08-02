@@ -83,6 +83,104 @@ class PostCard extends StatelessWidget {
             ),
             //IMAGE
           ),
+          //like comment etc.. section
+          Row(
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.favorite,
+                  color: Colors.yellow,
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.comment_outlined,
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.send_rounded,
+                ),
+              ),
+              Expanded(
+                child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: IconButton(
+                      icon: const Icon(Icons.bookmark_border),
+                      onPressed: () {}),
+                ),
+              ),
+            ],
+          ),
+//description, comments
+          Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16,
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                DefaultTextStyle(
+                  style: Theme.of(context)
+                      .textTheme
+                      .subtitle2!
+                      .copyWith(fontWeight: FontWeight.w800),
+                  child: Text(
+                    'likes',
+                    style: Theme.of(context).textTheme.bodyText2,
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.only(
+                    top: 8,
+                  ),
+                  child: RichText(
+                    text: TextSpan(
+                      style: const TextStyle(color: primaryColor),
+                      children: [
+                        TextSpan(
+                          text: 'username',
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        TextSpan(
+                          text: '  dscprtion',
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                InkWell(
+                    child: Container(
+                      child: Text(
+                        'View all comments',
+                        style: const TextStyle(
+                          fontSize: 16,
+                          color: secondaryColor,
+                        ),
+                      ),
+                      padding: const EdgeInsets.symmetric(vertical: 4),
+                    ),
+                    onTap: () {}),
+                Container(
+                  child: Text(
+                    '23/01/2022',
+                    style: const TextStyle(
+                      fontSize: 11,
+                      color: secondaryColor,
+                    ),
+                  ),
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

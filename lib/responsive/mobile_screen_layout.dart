@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:seta/screens/add_post_screen.dart';
 import 'package:seta/utils/colors.dart';
-import 'package:seta/utils/globalvariables.dart';
+import 'package:seta/utils/global_variable.dart';
 
 class MobileScreenLayout extends StatefulWidget {
   const MobileScreenLayout({Key? key}) : super(key: key);
