@@ -17,7 +17,7 @@ class FeedScreen extends StatelessWidget {
         title: SvgPicture.asset(
           'assets/seta_logo.svg',
           color: primaryColor,
-          height: 60,
+          height: 40,
         ),
         actions: [
           IconButton(
@@ -30,15 +30,18 @@ class FeedScreen extends StatelessWidget {
       ),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance.collection('posts').snapshots(),
-        builder: (context, snapshot) {
+        builder: (context,
+            AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
               child: CircularProgressIndicator(),
             );
           }
           return ListView.builder(
-            //itemCount: snapshot.data!.docs.length,
-            itemBuilder: (context, index) => PostCard(),
+            itemCount: snapshot.data!.docs.length,
+            itemBuilder: (context, index) => PostCard(
+              snap: snapshot.data!.docs[index].data(),
+            ),
           );
         },
       ),
