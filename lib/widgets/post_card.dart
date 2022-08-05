@@ -254,25 +254,24 @@ class _PostCardState extends State<PostCard> {
                   ),
                 ),
                 InkWell(
-                    child: Container(
-                      child: Text(
-                        'View all $commentLen comments',
-                        style: const TextStyle(
-                          fontSize: 16,
-                          color: secondaryColor,
-                        ),
+                  child: Container(
+                    child: Text(
+                      'View all $commentLen comments',
+                      style: const TextStyle(
+                        fontSize: 16,
+                        color: secondaryColor,
                       ),
-                      padding: const EdgeInsets.symmetric(vertical: 4),
                     ),
-                    onTap:
-                        () {} /*=> Navigator.of(context).push(
+                    padding: const EdgeInsets.symmetric(vertical: 4),
+                  ),
+                  onTap: () => Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => CommentsScreen(
                         snap: widget.snap['postId'].toString(),
                       ),
                     ),
-                  ),*/
-                    ),
+                  ),
+                ),
                 Container(
                   child: Text(
                     DateFormat.yMMMd()

@@ -99,7 +99,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 color: primaryColor,
                 height: 84,
               ), //image
-              const SizedBox(height: 54),
+              const SizedBox(height: 40),
               //circular widget for dp
               Stack(
                 children: [

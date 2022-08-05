@@ -4,10 +4,25 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:seta/utils/colors.dart';
 import 'package:seta/utils/global_variable.dart';
 import 'package:seta/widgets/post_card.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class FeedScreen extends StatelessWidget {
+class FeedScreen extends StatefulWidget {
   const FeedScreen({Key? key}) : super(key: key);
 
+  @override
+  State<FeedScreen> createState() => _FeedScreenState();
+}
+
+_invitationlink() async {
+  final Uri url = Uri.parse('https://discord.gg/T8GKg3RJTU');
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+class _FeedScreenState extends State<FeedScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,10 +36,8 @@ class FeedScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.messenger_outline,
-            ),
+            onPressed: _invitationlink,
+            icon: const Icon(Icons.explore_rounded),
           ),
         ],
       ),
