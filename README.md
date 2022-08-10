@@ -1,16 +1,37 @@
-# seta
+# Seta
 
-A new Flutter project.
+A completely Responsive Community App- Works on Android! 
 
-## Getting Started
+## Features
+- Responsive Realtime UI
+- Email & Password Authentication
+- Share Posts with Caption
+- Display Posts with Caption
+- Like & Comment on Posts
+- Search Users
+- Follow Users
+- Display User Profile with Posts, Followers & Following
+- Sign Out
 
-This project is a starting point for a Flutter application.
+## Installation
+After cloning this repository, migrate to ```seta``` folder. Then, follow the following steps:
+- Create Firebase Project
+- Enable Authentication
+- Make Firestore Rules
+- Create Android Project in Firebase
 
-A few resources to get you started if this is your first Flutter project:
+Then run the following commands to run your app:
+```bash
+  flutter pub get
+  select device from bottom tab
+  flutter run
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Tech Used
+**Server**: Firebase Auth, Firebase Storage, Firebase Firestore
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**Client**: Flutter, Provider
+    
+## Feedback
+
+If you have any feedback, please reach out to us at quadchef.team@gmail.com
