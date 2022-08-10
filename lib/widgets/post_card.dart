@@ -177,37 +177,28 @@ class _PostCardState extends State<PostCard> {
                   icon: widget.snap['likes'].contains(user.uid)
                       ? const Icon(
                           Icons.favorite_sharp,
-                          color: Colors.yellow,
+                          color: Colors.red,
                         )
                       : const Icon(
                           Icons.favorite_border_sharp,
                         ),
                 ),
               ),
-              IconButton(
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => CommentsScreen(
-                      snap: widget.snap,
-                    ),
-                  ),
-                ),
-                icon: const Icon(
-                  Icons.comment_outlined,
-                ),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.send_rounded,
-                ),
-              ),
               Expanded(
                 child: Align(
-                  alignment: Alignment.bottomRight,
+                  alignment: Alignment.centerLeft,
                   child: IconButton(
-                      icon: const Icon(Icons.bookmark_border),
-                      onPressed: () {}),
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => CommentsScreen(
+                          snap: widget.snap,
+                        ),
+                      ),
+                    ),
+                    icon: const Icon(
+                      Icons.comment_outlined,
+                    ),
+                  ),
                 ),
               ),
             ],
@@ -243,11 +234,16 @@ class _PostCardState extends State<PostCard> {
                         TextSpan(
                           text: widget.snap['username'],
                           style: const TextStyle(
+                            fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         TextSpan(
                           text: '  ${widget.snap['description']}',
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal,
+                          ),
                         ),
                       ],
                     ),
@@ -258,7 +254,7 @@ class _PostCardState extends State<PostCard> {
                     child: Text(
                       'View all $commentLen comments',
                       style: const TextStyle(
-                        fontSize: 16,
+                        fontSize: 14,
                         color: secondaryColor,
                       ),
                     ),
@@ -277,6 +273,7 @@ class _PostCardState extends State<PostCard> {
                     DateFormat.yMMMd()
                         .format(widget.snap['datePublished'].toDate()),
                     style: const TextStyle(
+                      fontSize: 12,
                       color: secondaryColor,
                     ),
                   ),
