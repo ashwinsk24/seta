@@ -42,7 +42,10 @@ class _FeedScreenState extends State<FeedScreen> {
         ],
       ),
       body: StreamBuilder(
-        stream: FirebaseFirestore.instance.collection('posts').snapshots(),
+        stream: FirebaseFirestore.instance
+            .collection('posts')
+            .orderBy('datePublished')
+            .snapshots(),
         builder: (context,
             AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
