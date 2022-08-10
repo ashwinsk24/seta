@@ -1,21 +1,26 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'package:seta/models/user.dart';
+import 'package:seta/models/user.dart' as model;
 import 'package:seta/providers/user_provider.dart';
+import 'package:seta/resources/auth_methods.dart';
 import 'package:seta/resources/firestore_methods.dart';
 import 'package:seta/screens/comments_screen.dart';
 import 'package:seta/utils/colors.dart';
 import 'package:seta/utils/utils.dart';
+import 'package:seta/widgets/delete_report.dart';
 import 'package:seta/widgets/like_animation.dart';
 
 class PostCard extends StatefulWidget {
+  final String uid;
   final snap;
   const PostCard({
     Key? key,
     required this.snap,
+    required this.uid,
   }) : super(key: key);
 
   @override
@@ -23,6 +28,8 @@ class PostCard extends StatefulWidget {
 }
 
 class _PostCardState extends State<PostCard> {
+  var userData = {};
+  bool isFollowing = false;
   bool isLikeAnimating = false;
   int commentLen = 0;
   @override
@@ -46,7 +53,7 @@ class _PostCardState extends State<PostCard> {
   }
 
   Widget build(BuildContext context) {
-    final User user = Provider.of<UserProvider>(context).getUser;
+    final model.User user = Provider.of<UserProvider>(context).getUser;
     return Container(
       color: mobileBackgroundColor,
       padding: const EdgeInsets.symmetric(vertical: 10),
@@ -94,7 +101,47 @@ class _PostCardState extends State<PostCard> {
                           ),
                           shrinkWrap: true,
                           children: [
-                            'Delete',
+                            FirebaseAuth.instance.currentUser!.uid == widget.uid
+                                ? DeleteButton(
+                                    text: 'Delete',
+                                    backgroundColor: mobileBackgroundColor,
+                                    textColor: primaryColor,
+                                    borderColor: Colors.grey,
+                                    function: () async {
+                                      widget.snap['postId'].toString();
+                                    },
+                                  )
+                                : isFollowing
+                                    ? DeleteButton(
+                                        text: 'Unfollow',
+                                        backgroundColor: Colors.white,
+                                        textColor: Colors.black,
+                                        borderColor: Colors.grey,
+                                        function: () async {
+                                          await FirestoreMethods().followUser(
+                                            FirebaseAuth
+                                                .instance.currentUser!.uid,
+                                            userData['uid'],
+                                          );
+
+                                          setState(() {
+                                            isFollowing = false;
+                                          });
+                                        },
+                                      )
+                                    : DeleteButton(
+                                        text: 'Follow',
+                                        backgroundColor: Colors.blue,
+                                        textColor: Colors.white,
+                                        borderColor: Colors.blue,
+                                        function: () async {
+                                          await FirestoreMethods().followUser(
+                                            FirebaseAuth
+                                                .instance.currentUser!.uid,
+                                            userData['uid'],
+                                          );
+                                        },
+                                      ),
                           ]
                               .map(
                                 (e) => InkWell(
@@ -106,7 +153,7 @@ class _PostCardState extends State<PostCard> {
                                   child: Container(
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 12, horizontal: 16),
-                                    child: Text(e),
+                                    child: Text('Delete'),
                                   ),
                                 ),
                               )
