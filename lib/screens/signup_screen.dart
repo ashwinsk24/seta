@@ -97,9 +97,9 @@ class _SignupScreenState extends State<SignupScreen> {
               SvgPicture.asset(
                 'assets/seta_logo.svg',
                 color: primaryColor,
-                height: 84,
+                height: 80,
               ), //image
-              const SizedBox(height: 40),
+              const SizedBox(height: 15),
               //circular widget for dp
               Stack(
                 children: [

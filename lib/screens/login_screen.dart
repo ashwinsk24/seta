@@ -23,7 +23,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     _emailController.dispose();
     _passwordController.dispose();
@@ -76,9 +75,9 @@ class _LoginScreenState extends State<LoginScreen> {
               SvgPicture.asset(
                 'assets/seta_logo.svg',
                 color: primaryColor,
-                height: 94,
+                height: 80,
               ), //image
-              const SizedBox(height: 64),
+              const SizedBox(height: 40),
               //text email
               TextFieldInput(
                 hintText: 'Enter your email',
