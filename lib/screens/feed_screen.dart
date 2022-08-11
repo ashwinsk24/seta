@@ -22,6 +22,16 @@ _invitationlink() async {
   }
 }
 
+_updatelink() async {
+  final Uri url = Uri.parse(
+      'https://drive.google.com/drive/folders/1_LPu0mDUirU-7q50mgXlV1vB4FhIyC9s?usp=sharing');
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
 class _FeedScreenState extends State<FeedScreen> {
   @override
   Widget build(BuildContext context) {
@@ -32,12 +42,16 @@ class _FeedScreenState extends State<FeedScreen> {
         title: SvgPicture.asset(
           'assets/seta_logo.svg',
           color: primaryColor,
-          height: 40,
+          height: 50,
         ),
         actions: [
           IconButton(
             onPressed: _invitationlink,
             icon: const Icon(Icons.explore_rounded),
+          ),
+          IconButton(
+            onPressed: _updatelink,
+            icon: const Icon(Icons.tips_and_updates),
           ),
         ],
       ),

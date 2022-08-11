@@ -99,7 +99,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 color: primaryColor,
                 height: 80,
               ), //image
-              const SizedBox(height: 15),
+              const SizedBox(height: 10),
               //circular widget for dp
               Stack(
                 children: [
@@ -110,8 +110,8 @@ class _SignupScreenState extends State<SignupScreen> {
                         )
                       : const CircleAvatar(
                           radius: 64,
-                          backgroundImage: NetworkImage(
-                              'https://winaero.com/blog/wp-content/uploads/2018/08/Windows-10-user-icon-big.png'),
+                          backgroundImage:
+                              AssetImage('assets/sample_profile.png'),
                         ),
                   Positioned(
                     bottom: -10,
