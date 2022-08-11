@@ -5,6 +5,7 @@ import 'package:seta/utils/colors.dart';
 import 'package:seta/utils/global_variable.dart';
 import 'package:seta/widgets/post_card.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class FeedScreen extends StatefulWidget {
   const FeedScreen({Key? key}) : super(key: key);
@@ -13,20 +14,10 @@ class FeedScreen extends StatefulWidget {
   State<FeedScreen> createState() => _FeedScreenState();
 }
 
-_invitationlink() async {
-  final Uri url = Uri.parse('https://discord.gg/T8GKg3RJTU');
-  if (await canLaunchUrl(url)) {
-    await launchUrl(url);
-  } else {
-    throw 'Could not launch $url';
-  }
-}
-
 _updatelink() async {
-  final Uri url = Uri.parse(
-      'https://drive.google.com/file/d/1LS7iHAfkP-Fs1E1gF6YsBMfW2X8mM_GB/view?usp=sharing');
-  if (await canLaunchUrl(url)) {
-    await launchUrl(url);
+  const url = 'https://t.me/+L1Rb5LqZbKY2YmVl';
+  if (await canLaunchUrlString(url)) {
+    await launchUrlString(url, mode: LaunchMode.externalApplication);
   } else {
     throw 'Could not launch $url';
   }
@@ -46,12 +37,8 @@ class _FeedScreenState extends State<FeedScreen> {
         ),
         actions: [
           IconButton(
-            onPressed: _invitationlink,
-            icon: const Icon(Icons.explore_rounded),
-          ),
-          IconButton(
             onPressed: _updatelink,
-            icon: const Icon(Icons.tips_and_updates),
+            icon: const Icon(Icons.telegram_sharp),
           ),
         ],
       ),
