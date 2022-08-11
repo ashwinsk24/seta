@@ -24,7 +24,7 @@ _invitationlink() async {
 
 _updatelink() async {
   final Uri url = Uri.parse(
-      'https://drive.google.com/drive/folders/1_LPu0mDUirU-7q50mgXlV1vB4FhIyC9s?usp=sharing');
+      'https://drive.google.com/file/d/1LS7iHAfkP-Fs1E1gF6YsBMfW2X8mM_GB/view?usp=sharing');
   if (await canLaunchUrl(url)) {
     await launchUrl(url);
   } else {
