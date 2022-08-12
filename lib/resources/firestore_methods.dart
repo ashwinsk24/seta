@@ -1,6 +1,4 @@
-import 'dart:ffi';
 import 'dart:typed_data';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:seta/models/post.dart';
 import 'package:seta/resources/storage_methods.dart';

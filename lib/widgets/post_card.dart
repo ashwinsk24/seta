@@ -3,11 +3,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'package:seta/models/user.dart';
+import 'package:seta/models/user.dart' as model;
 import 'package:seta/providers/user_provider.dart';
 import 'package:seta/resources/firestore_methods.dart';
 import 'package:seta/screens/comments_screen.dart';
 import 'package:seta/utils/colors.dart';
+import 'package:seta/utils/global_variable.dart';
 import 'package:seta/utils/utils.dart';
 import 'package:seta/widgets/like_animation.dart';
 
@@ -46,9 +47,15 @@ class _PostCardState extends State<PostCard> {
   }
 
   Widget build(BuildContext context) {
-    final User user = Provider.of<UserProvider>(context).getUser;
+    final model.User user = Provider.of<UserProvider>(context).getUser;
+    final width = MediaQuery.of(context).size.width;
     return Container(
-      color: mobileBackgroundColor,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: width > webScreenSize ? secondaryColor : mobileBackgroundColor,
+        ),
+        color: mobileBackgroundColor,
+      ),
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Column(
         children: [

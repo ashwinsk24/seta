@@ -26,22 +26,27 @@ _updatelink() async {
 class _FeedScreenState extends State<FeedScreen> {
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: mobileBackgroundColor,
-        centerTitle: false,
-        title: SvgPicture.asset(
-          'assets/seta_logo.svg',
-          color: primaryColor,
-          height: 50,
-        ),
-        actions: [
-          IconButton(
-            onPressed: _updatelink,
-            icon: const Icon(Icons.telegram_sharp),
-          ),
-        ],
-      ),
+      appBar: width > webScreenSize
+          ? null
+          : AppBar(
+              backgroundColor: width > webScreenSize
+                  ? webBackgroundColor
+                  : mobileBackgroundColor,
+              centerTitle: false,
+              title: SvgPicture.asset(
+                'assets/seta_logo.svg',
+                color: primaryColor,
+                height: 50,
+              ),
+              actions: [
+                IconButton(
+                  onPressed: _updatelink,
+                  icon: const Icon(Icons.telegram_sharp),
+                ),
+              ],
+            ),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance
             .collection('posts')
@@ -56,8 +61,14 @@ class _FeedScreenState extends State<FeedScreen> {
           }
           return ListView.builder(
             itemCount: snapshot.data!.docs.length,
-            itemBuilder: (context, index) => PostCard(
-              snap: snapshot.data!.docs[index].data(),
+            itemBuilder: (context, index) => Container(
+              margin: EdgeInsets.symmetric(
+                horizontal: width > webScreenSize ? width * 0.3 : 0,
+                vertical: width > webScreenSize ? 15 : 0,
+              ),
+              child: PostCard(
+                snap: snapshot.data!.docs[index].data(),
+              ),
             ),
           );
         },
