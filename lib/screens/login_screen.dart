@@ -89,7 +89,6 @@ class _LoginScreenState extends State<LoginScreen> {
               //text email
               TextFieldInput(
                 labelText: 'Email Address',
-                hintText: 'Email Address',
                 textInputType: TextInputType.emailAddress,
                 textEditingController: _emailController,
               ),
@@ -97,7 +96,6 @@ class _LoginScreenState extends State<LoginScreen> {
               //text password
               TextFieldInput(
                 labelText: 'Password',
-                hintText: 'Password',
                 textInputType: TextInputType.text,
                 textEditingController: _passwordController,
                 isPass: true,

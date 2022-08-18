@@ -129,7 +129,6 @@ class _SignupScreenState extends State<SignupScreen> {
               //text email
               TextFieldInput(
                 labelText: 'Email address',
-                hintText: 'Email address',
                 textInputType: TextInputType.emailAddress,
                 textEditingController: _emailController,
               ),
@@ -137,7 +136,6 @@ class _SignupScreenState extends State<SignupScreen> {
               //username textfield
               TextFieldInput(
                 labelText: 'Username',
-                hintText: 'Username',
                 textInputType: TextInputType.text,
                 textEditingController: _usernameController,
               ),
@@ -145,7 +143,6 @@ class _SignupScreenState extends State<SignupScreen> {
               //text password
               TextFieldInput(
                 labelText: 'Password',
-                hintText: 'Password',
                 textInputType: TextInputType.text,
                 textEditingController: _passwordController,
                 isPass: true,
@@ -154,7 +151,6 @@ class _SignupScreenState extends State<SignupScreen> {
               //bio textfield
               TextFieldInput(
                 labelText: 'Bio',
-                hintText: 'Add bio',
                 textInputType: TextInputType.text,
                 textEditingController: _bioController,
               ),

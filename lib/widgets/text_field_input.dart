@@ -4,13 +4,12 @@ class TextFieldInput extends StatelessWidget {
   final TextEditingController textEditingController;
   final bool isPass;
   final String labelText;
-  final String hintText;
+
   final TextInputType textInputType;
   const TextFieldInput(
       {Key? key,
       required this.textEditingController,
       this.isPass = false,
-      required this.hintText,
       required this.labelText,
       required this.textInputType})
       : super(key: key);
@@ -22,7 +21,6 @@ class TextFieldInput extends StatelessWidget {
     return TextField(
       controller: textEditingController,
       decoration: InputDecoration(
-        hintText: hintText,
         labelText: labelText,
         border: InputBorder,
         focusedBorder: InputBorder,
