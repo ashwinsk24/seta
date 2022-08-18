@@ -95,7 +95,7 @@ class _SignupScreenState extends State<SignupScreen> {
             children: [
               Flexible(flex: 2, child: Container()),
               Image(
-                image: AssetImage('assets/seta_logo.png'),
+                image: AssetImage('assets/seta_logo.svg'),
                 color: primaryColor,
                 height: 80,
               ), //image
