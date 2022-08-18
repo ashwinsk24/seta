@@ -59,7 +59,7 @@ class _SignupScreenState extends State<SignupScreen> {
       _isLoading = false;
     });
 
-    if (res != 'Success') {
+    if (res != "success") {
       // ignore: use_build_context_synchronously
       showSnackBar(res, context);
     } else {
