@@ -59,7 +59,7 @@ class _SignupScreenState extends State<SignupScreen> {
       _isLoading = false;
     });
 
-    if (res != "success") {
+    if (res != 'Success') {
       // ignore: use_build_context_synchronously
       showSnackBar(res, context);
     } else {
@@ -94,28 +94,28 @@ class _SignupScreenState extends State<SignupScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Flexible(flex: 2, child: Container()),
-              SvgPicture.asset(
-                'assets/seta_logo.svg',
+              Image(
+                image: AssetImage('assets/seta_logo.png'),
                 color: primaryColor,
                 height: 80,
               ), //image
-
+              const SizedBox(height: 10),
               //circular widget for dp
               Stack(
                 children: [
                   _image != null
                       ? CircleAvatar(
-                          radius: 60,
+                          radius: 64,
                           backgroundImage: MemoryImage(_image!),
                         )
                       : const CircleAvatar(
-                          radius: 60,
+                          radius: 64,
                           backgroundImage:
                               AssetImage('assets/sample_profile.png'),
                         ),
                   Positioned(
-                    bottom: -5,
-                    left: 50,
+                    bottom: -10,
+                    left: 80,
                     child: IconButton(
                       onPressed: selectImage,
                       icon: const Icon(
@@ -125,32 +125,32 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 15),
-              //text email
-              TextFieldInput(
-                labelText: ' Email address',
-                textInputType: TextInputType.emailAddress,
-                textEditingController: _emailController,
-              ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               //username textfield
               TextFieldInput(
-                labelText: ' Username',
+                labelText: 'Enter your username',
                 textInputType: TextInputType.text,
                 textEditingController: _usernameController,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
+              //text email
+              TextFieldInput(
+                labelText: 'Enter your email',
+                textInputType: TextInputType.emailAddress,
+                textEditingController: _emailController,
+              ),
+              const SizedBox(height: 20),
               //text password
               TextFieldInput(
-                labelText: ' Password',
+                labelText: 'Enter your password',
                 textInputType: TextInputType.text,
                 textEditingController: _passwordController,
                 isPass: true,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               //bio textfield
               TextFieldInput(
-                labelText: ' Bio',
+                labelText: 'Enter your bio',
                 textInputType: TextInputType.text,
                 textEditingController: _bioController,
               ),
@@ -184,12 +184,17 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
               ),
               const SizedBox(height: 6),
-              Flexible(flex: 3, child: Container()),
+              Flexible(flex: 2, child: Container()),
               // signup!
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Have an account?"),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 8,
+                    ),
+                    child: const Text("Have an account?"),
+                  ),
                   GestureDetector(
                     onTap: navigateToLogin,
                     child: Container(
