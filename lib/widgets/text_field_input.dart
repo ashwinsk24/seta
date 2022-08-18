@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class TextFieldInput extends StatelessWidget {
   final TextEditingController textEditingController;
   final bool isPass;
+  final String labelText;
   final String hintText;
   final TextInputType textInputType;
   const TextFieldInput(
@@ -10,6 +11,7 @@ class TextFieldInput extends StatelessWidget {
       required this.textEditingController,
       this.isPass = false,
       required this.hintText,
+      required this.labelText,
       required this.textInputType})
       : super(key: key);
 
@@ -21,6 +23,7 @@ class TextFieldInput extends StatelessWidget {
       controller: textEditingController,
       decoration: InputDecoration(
         hintText: hintText,
+        labelText: labelText,
         border: InputBorder,
         focusedBorder: InputBorder,
         enabledBorder: InputBorder,

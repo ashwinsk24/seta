@@ -88,14 +88,16 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 40),
               //text email
               TextFieldInput(
-                hintText: 'Enter your email',
+                labelText: 'Email Address',
+                hintText: 'Email Address',
                 textInputType: TextInputType.emailAddress,
                 textEditingController: _emailController,
               ),
               const SizedBox(height: 20),
               //text password
               TextFieldInput(
-                hintText: 'Enter your password',
+                labelText: 'Password',
+                hintText: 'Password',
                 textInputType: TextInputType.text,
                 textEditingController: _passwordController,
                 isPass: true,
@@ -112,7 +114,12 @@ class _LoginScreenState extends State<LoginScreen> {
                             color: primaryColor,
                           ),
                         )
-                      : const Text('Log in'),
+                      : const Text(
+                          'Log in',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                   width: double.infinity,
                   alignment: Alignment.center,
                   padding: const EdgeInsets.symmetric(vertical: 12),
@@ -139,7 +146,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     padding: const EdgeInsets.symmetric(
                       vertical: 8,
                     ),
-                    child: const Text("Don't have an account?"),
+                    child: const Text(
+                      "New to Seta?",
+                    ),
                   ),
                   GestureDetector(
                     onTap: navigateToSignup,
@@ -150,6 +159,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: const Text(
                         " Sign up.",
                         style: TextStyle(
+                          color: blueColor,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
