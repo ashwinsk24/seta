@@ -88,14 +88,14 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 40),
               //text email
               TextFieldInput(
-                labelText: 'Email Address',
+                labelText: ' Email Address',
                 textInputType: TextInputType.emailAddress,
                 textEditingController: _emailController,
               ),
               const SizedBox(height: 20),
               //text password
               TextFieldInput(
-                labelText: 'Password',
+                labelText: ' Password',
                 textInputType: TextInputType.text,
                 textEditingController: _passwordController,
                 isPass: true,
