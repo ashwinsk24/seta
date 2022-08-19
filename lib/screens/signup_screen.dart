@@ -56,22 +56,26 @@ class _SignupScreenState extends State<SignupScreen> {
       file: _image!,
     );
 
-    setState(() {
-      _isLoading = false;
-    });
+    if (res == "success") {
+      Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(
+            builder: (context) => const ResponsiveLayout(
+              mobileScreenLayout: MobileScreenLayout(),
+              webScreenLayout: WebScreenLayout(),
+            ),
+          ),
+          (route) => false);
+      setState(() {
+        _isLoading = false;
+      });
 
-    if (res != "success") {
+      //
+    } else {
+      setState(() {
+        _isLoading = false;
+      });
       // ignore: use_build_context_synchronously
       showSnackBar(res, context);
-    } else {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => const ResponsiveLayout(
-            mobileScreenLayout: MobileScreenLayout(),
-            webScreenLayout: WebScreenLayout(),
-          ),
-        ),
-      );
     }
   }
 
@@ -90,7 +94,6 @@ class _SignupScreenState extends State<SignupScreen> {
       appBar: AppBar(
         backgroundColor:
             width > webScreenSize ? webBackgroundColor : mobileBackgroundColor,
-        centerTitle: false,
       ),
       //resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
@@ -108,7 +111,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   color: primaryColor,
                   height: 80,
                 ), //image
-                const SizedBox(height: 10),
+                const SizedBox(height: 20),
                 //circular widget for dp
                 Stack(
                   children: [
@@ -134,21 +137,21 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 25),
                 //username textfield
                 TextFieldInput(
                   labelText: 'Enter username',
                   textInputType: TextInputType.text,
                   textEditingController: _usernameController,
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 20),
                 //text email
                 TextFieldInput(
                   labelText: 'Enter email address',
                   textInputType: TextInputType.emailAddress,
                   textEditingController: _emailController,
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 20),
                 //text password
                 TextFieldInput(
                   labelText: 'Enter password',
@@ -156,14 +159,14 @@ class _SignupScreenState extends State<SignupScreen> {
                   textEditingController: _passwordController,
                   isPass: true,
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 20),
                 //bio textfield
                 TextFieldInput(
                   labelText: 'Add bio',
                   textInputType: TextInputType.text,
                   textEditingController: _bioController,
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 25),
                 //login button
                 InkWell(
                   onTap: signUpUser,

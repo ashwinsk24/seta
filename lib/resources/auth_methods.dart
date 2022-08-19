@@ -27,12 +27,13 @@ class AuthMethods {
     required String bio,
     required Uint8List file,
   }) async {
-    String res = " Some error occured";
+    String res = " Some error Occured";
     try {
       if (email.isNotEmpty ||
           password.isNotEmpty ||
           username.isNotEmpty ||
-          bio.isNotEmpty) {
+          bio.isNotEmpty ||
+          file != null) {
         //reg user
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
             email: email, password: password);
@@ -42,7 +43,7 @@ class AuthMethods {
             .uploadImageToStorage('profilePics', file, false);
 
         //add user
-        model.User user = model.User(
+        model.User _user = model.User(
           username: username,
           uid: cred.user!.uid,
           email: email,
@@ -53,19 +54,14 @@ class AuthMethods {
         );
 
         await _firestore.collection('users').doc(cred.user!.uid).set(
-              user.toJson(),
+              _user.toJson(),
             );
 
-        res = "Success";
+        res = "success";
+      } else {
+        res = "Please enter all the fields";
       }
-    } /*on FirebaseAuthException catch (err) {
-      if (err.code == 'invalid-email') {
-        res = 'The email is badly formatted.';
-      } else if (err.code == 'weak-password') {
-        res = 'Password should be at least 6 characters';
-      } 
-    } */
-    catch (err) {
+    } catch (err) {
       res = err.toString();
     }
     return res;
@@ -76,7 +72,7 @@ class AuthMethods {
     required String email,
     required String password,
   }) async {
-    String res = "Some error occured";
+    String res = "Some error Occured";
 
     try {
       if (email.isNotEmpty || password.isNotEmpty) {
