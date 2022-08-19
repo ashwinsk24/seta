@@ -94,8 +94,8 @@ class _SignupScreenState extends State<SignupScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Flexible(flex: 2, child: Container()),
-              Image(
-                image: AssetImage('assets/seta_logo.svg'),
+              SvgPicture.asset(
+                'assets/seta_logo.svg',
                 color: primaryColor,
                 height: 80,
               ), //image
