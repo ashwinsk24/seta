@@ -51,6 +51,13 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
           color: primaryColor,
           height: 52,
         ),
+        /*Image(
+                image: AssetImage(
+                  'assets/seta_logo.png',
+                ),
+                height: 52,
+              ),
+        */
         actions: [
           IconButton(
             icon: Icon(

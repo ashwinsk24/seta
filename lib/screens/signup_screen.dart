@@ -110,7 +110,14 @@ class _SignupScreenState extends State<SignupScreen> {
                   'assets/seta_logo.svg',
                   color: primaryColor,
                   height: 80,
-                ), //image
+                ),
+                /*Image(
+                  image: AssetImage(
+                    'assets/seta_logo.png',
+                  ),
+                  height: 80,
+                ),
+                */ //image
                 const SizedBox(height: 20),
                 //circular widget for dp
                 Stack(
