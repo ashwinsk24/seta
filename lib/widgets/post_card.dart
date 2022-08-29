@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -101,7 +102,7 @@ class _PostCardState extends State<PostCard> {
                           ),
                           shrinkWrap: true,
                           children: [
-                            'Delete',
+                            'Report',
                           ]
                               .map(
                                 (e) => InkWell(
@@ -183,31 +184,35 @@ class _PostCardState extends State<PostCard> {
                   },
                   icon: widget.snap['likes'].contains(user.uid)
                       ? const Icon(
-                          Icons.favorite_sharp,
+                          Icons.favorite_rounded,
                           color: Colors.red,
                         )
                       : const Icon(
-                          Icons.favorite_border_sharp,
+                          Icons.favorite_border_rounded,
                         ),
                 ),
               ),
-              Expanded(
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: IconButton(
-                    onPressed: () => Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => CommentsScreen(
-                          snap: widget.snap,
-                        ),
-                      ),
-                    ),
-                    icon: const Icon(
-                      Icons.comment_outlined,
+              IconButton(
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => CommentsScreen(
+                      snap: widget.snap,
                     ),
                   ),
                 ),
+                icon: const Icon(
+                  Icons.mode_comment_outlined,
+                ),
               ),
+              IconButton(
+                  icon: const Icon(
+                    Icons.arrow_forward_ios_rounded,
+                  ),
+                  onPressed: () {
+                    Share.share(
+                        'Check out my Post at https://ashwinsk24.github.io/seta_web',
+                        subject: 'Look what I made!');
+                  }),
             ],
           ),
 //description, comments

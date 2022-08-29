@@ -34,11 +34,12 @@ class _FeedScreenState extends State<FeedScreen> {
               backgroundColor: width > webScreenSize
                   ? webBackgroundColor
                   : mobileBackgroundColor,
-              centerTitle: true,
+              centerTitle: false,
               title: SvgPicture.asset(
                 'assets/seta_logo.svg',
                 color: primaryColor,
                 height: 50,
+                alignment: Alignment.centerLeft,
               ),
               actions: [
                 IconButton(
