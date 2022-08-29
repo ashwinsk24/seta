@@ -39,7 +39,6 @@ class _FeedScreenState extends State<FeedScreen> {
                 'assets/seta_logo.svg',
                 color: primaryColor,
                 height: 50,
-                alignment: Alignment.centerLeft,
               ),
               actions: [
                 IconButton(
