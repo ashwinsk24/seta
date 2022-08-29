@@ -210,7 +210,7 @@ class _PostCardState extends State<PostCard> {
                   ),
                   onPressed: () {
                     Share.share(
-                        'Check out my Post at https://ashwinsk24.github.io/seta_web',
+                        'Check out my Post at https://ashwinsk24.github.io/seta_web ',
                         subject: 'Look what I made!');
                   }),
             ],
