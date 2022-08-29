@@ -34,7 +34,7 @@ class _FeedScreenState extends State<FeedScreen> {
               backgroundColor: width > webScreenSize
                   ? webBackgroundColor
                   : mobileBackgroundColor,
-              centerTitle: false,
+              centerTitle: true,
               title: SvgPicture.asset(
                 'assets/seta_logo.svg',
                 color: primaryColor,

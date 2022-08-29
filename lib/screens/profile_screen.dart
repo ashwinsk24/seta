@@ -72,7 +72,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             appBar: AppBar(
               backgroundColor: mobileBackgroundColor,
               title: Text(userData['username']),
-              centerTitle: false,
+              centerTitle: true,
             ),
             body: ListView(
               children: [
