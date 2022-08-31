@@ -88,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 40),
               //text email
               TextFieldInput(
-                labelText: ' Email Address',
+                labelText: ' Email',
                 textInputType: TextInputType.emailAddress,
                 textEditingController: _emailController,
               ),
@@ -131,11 +131,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 12),
-              Flexible(
+              const SizedBox(height: 25),
+              /*Flexible(
                 flex: 2,
                 child: Container(),
-              ),
+              ),*/
               // signup!
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -164,7 +164,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ],
-              )
+              ),
+              Flexible(
+                flex: 2,
+                child: Container(),
+              ),
             ],
           ),
         ),
