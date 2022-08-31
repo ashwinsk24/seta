@@ -91,6 +91,7 @@ class _SignupScreenState extends State<SignupScreen> {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
+      appBar: AppBar(backgroundColor: Colors.white),
       //resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         child: SafeArea(
