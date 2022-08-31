@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:seta/utils/colors.dart';
 
 class CommentCard extends StatelessWidget {
   final snap;
@@ -34,10 +35,13 @@ class CommentCard extends StatelessWidget {
                             text: snap.data()['name'],
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
+                              color: primaryColor,
                             )),
                         TextSpan(
-                          text: ' ${snap.data()['text']}',
-                        ),
+                            text: ' ${snap.data()['text']}',
+                            style: const TextStyle(
+                              color: primaryColor,
+                            )),
                       ],
                     ),
                   ),

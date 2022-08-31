@@ -8,9 +8,11 @@ class NotificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: mobileBackgroundColor,
         centerTitle: false,
-        title: Text('Favourites'),
+        title: Text(
+          'Favourites',
+          style: TextStyle(),
+        ),
       ),
     );
   }

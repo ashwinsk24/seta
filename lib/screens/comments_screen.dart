@@ -28,8 +28,12 @@ class _CommentsScreenState extends State<CommentsScreen> {
     final User user = Provider.of<UserProvider>(context).getUser;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: mobileBackgroundColor,
-        title: const Text('Comments'),
+        title: const Text(
+          'Comments',
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         centerTitle: false,
       ),
       body: StreamBuilder(

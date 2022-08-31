@@ -91,10 +91,6 @@ class _SignupScreenState extends State<SignupScreen> {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor:
-            width > webScreenSize ? webBackgroundColor : mobileBackgroundColor,
-      ),
       //resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         child: SafeArea(
@@ -104,12 +100,12 @@ class _SignupScreenState extends State<SignupScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const SizedBox(height: 10),
+                const SizedBox(height: 40),
                 //Flexible(flex: 1, child: Container()),
                 SvgPicture.asset(
                   'assets/seta_logo.svg',
                   color: primaryColor,
-                  height: 80,
+                  height: 60,
                 ),
                 /*Image(
                   image: AssetImage(
@@ -118,7 +114,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   height: 80,
                 ),
                 */ //image
-                const SizedBox(height: 20),
+                const SizedBox(height: 15),
                 //circular widget for dp
                 Stack(
                   children: [
@@ -197,6 +193,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         : const Text(
                             'Sign up',
                             style: TextStyle(
+                              color: Colors.black,
                               fontWeight: FontWeight.bold,
                             ),
                           ),

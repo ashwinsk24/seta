@@ -38,12 +38,15 @@ class _FeedScreenState extends State<FeedScreen> {
               title: SvgPicture.asset(
                 'assets/seta_logo.svg',
                 color: primaryColor,
-                height: 50,
+                height: 40,
               ),
               actions: [
                 IconButton(
                   onPressed: _updatelink,
-                  icon: const Icon(Icons.telegram_sharp),
+                  icon: const Icon(
+                    Icons.telegram_sharp,
+                    color: Colors.blueAccent,
+                  ),
                 ),
               ],
             ),

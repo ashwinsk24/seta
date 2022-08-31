@@ -70,8 +70,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
           )
         : Scaffold(
             appBar: AppBar(
-              backgroundColor: mobileBackgroundColor,
-              title: Text(userData['username']),
+              title: Text(
+                userData['username'],
+                style: TextStyle(),
+              ),
               centerTitle: false,
             ),
             body: ListView(

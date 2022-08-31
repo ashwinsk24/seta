@@ -119,7 +119,12 @@ class _AddPostScreenState extends State<AddPostScreen> {
         ? Scaffold(
             appBar: AppBar(
               backgroundColor: mobileBackgroundColor,
-              title: const Text('Add Post'),
+              title: const Text(
+                'Add Post',
+                style: TextStyle(
+                  color: primaryColor,
+                ),
+              ),
               centerTitle: false,
             ),
             body: Center(
