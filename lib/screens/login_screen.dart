@@ -83,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
               SvgPicture.asset(
                 'assets/seta_logo.svg',
                 color: primaryColor,
-                height: 80,
+                height: 60,
               ), //image
               const SizedBox(height: 40),
               //text email

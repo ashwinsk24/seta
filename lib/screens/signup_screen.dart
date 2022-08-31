@@ -109,7 +109,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 SvgPicture.asset(
                   'assets/seta_logo.svg',
                   color: primaryColor,
-                  height: 80,
+                  height: 60,
                 ),
                 /*Image(
                   image: AssetImage(
