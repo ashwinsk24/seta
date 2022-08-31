@@ -72,7 +72,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             appBar: AppBar(
               backgroundColor: mobileBackgroundColor,
               title: Text(userData['username']),
-              centerTitle: true,
+              centerTitle: false,
             ),
             body: ListView(
               children: [
@@ -88,7 +88,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             radius: 45,
                           ),
                           Expanded(
-                            flex: 1,
+                            flex: 5,
                             child: Column(
                               children: [
                                 Row(
@@ -127,9 +127,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         : isFollowing
                                             ? FollowButton(
                                                 text: 'Unfollow',
-                                                backgroundColor: Colors.white,
-                                                textColor: Colors.black,
-                                                borderColor: Colors.grey,
+                                                backgroundColor: Colors.red,
+                                                textColor: Colors.white,
+                                                borderColor: Colors.red,
                                                 function: () async {
                                                   await FirestoreMethods()
                                                       .followUser(
@@ -146,9 +146,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                               )
                                             : FollowButton(
                                                 text: 'Follow',
-                                                backgroundColor: Colors.blue,
+                                                backgroundColor: blueColor,
                                                 textColor: Colors.white,
-                                                borderColor: Colors.blue,
+                                                borderColor: blueColor,
                                                 function: () async {
                                                   await FirestoreMethods()
                                                       .followUser(

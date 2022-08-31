@@ -9,7 +9,7 @@ class NotificationScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: mobileBackgroundColor,
-        centerTitle: true,
+        centerTitle: false,
         title: Text('Favourites'),
       ),
     );

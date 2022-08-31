@@ -120,7 +120,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
             appBar: AppBar(
               backgroundColor: mobileBackgroundColor,
               title: const Text('Add Post'),
-              centerTitle: true,
+              centerTitle: false,
             ),
             body: Center(
               child: IconButton(
