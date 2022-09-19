@@ -80,10 +80,11 @@ class _LoginScreenState extends State<LoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Flexible(flex: 2, child: Container()),
-              SvgPicture.asset(
-                'assets/seta_logo.svg',
-                color: primaryColor,
-                height: 60,
+              Image(
+                image: AssetImage(
+                  'assets/seta_logo.png',
+                ),
+                height: 80,
               ), //image
               const SizedBox(height: 40),
               //text email

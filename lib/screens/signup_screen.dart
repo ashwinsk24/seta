@@ -106,10 +106,11 @@ class _SignupScreenState extends State<SignupScreen> {
               children: [
                 const SizedBox(height: 10),
                 //Flexible(flex: 1, child: Container()),
-                SvgPicture.asset(
-                  'assets/seta_logo.svg',
-                  color: primaryColor,
-                  height: 60,
+                Image(
+                  image: AssetImage(
+                    'assets/seta_logo.png',
+                  ),
+                  height: 80,
                 ),
                 /*Image(
                   image: AssetImage(
