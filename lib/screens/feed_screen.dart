@@ -4,7 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:seta/utils/colors.dart';
 import 'package:seta/utils/global_variable.dart';
 import 'package:seta/widgets/post_card.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class FeedScreen extends StatefulWidget {
