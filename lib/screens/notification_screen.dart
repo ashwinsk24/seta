@@ -83,7 +83,7 @@ class NotificationScreen extends StatelessWidget {
               onPressed: () => _updatelink1_(),
             ),
             title: TextButton(
-              onPressed: () => _updatelink1(),
+              onPressed: () => _updatelink1_(),
               child: Row(
                 children: <Widget>[
                   Text(
