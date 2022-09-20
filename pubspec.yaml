@@ -52,12 +52,8 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: false
-  image_path: "assets/seta_logo.png"
-  web:
-    generate: true
-    image_path: "assets/seta_logo.png"
-    background_color: "#000000"
-    theme_color: "#FFFFFF"
+  image_path: "assets/seta_alogo.png"
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
