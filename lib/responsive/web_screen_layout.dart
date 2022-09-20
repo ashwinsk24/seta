@@ -46,18 +46,12 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
       appBar: AppBar(
         backgroundColor: mobileBackgroundColor,
         centerTitle: false,
-        title: SvgPicture.asset(
-          'assets/seta_logo.svg',
-          color: primaryColor,
+        title: Image(
+          image: AssetImage(
+            'assets/seta_logo.png',
+          ),
           height: 52,
         ),
-        /*Image(
-                image: AssetImage(
-                  'assets/seta_logo.png',
-                ),
-                height: 52,
-              ),
-        */
         actions: [
           IconButton(
             icon: Icon(

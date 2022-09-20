@@ -14,7 +14,7 @@ class NotificationScreen extends StatelessWidget {
   }
 
   _updatelink1_() async {
-    const url = 'https://ktu.edu.in/';
+    const url = 'https://app.ktu.edu.in/login.htm';
     if (await canLaunchUrlString(url)) {
       await launchUrlString(url, mode: LaunchMode.externalApplication);
     } else {
@@ -83,7 +83,7 @@ class NotificationScreen extends StatelessWidget {
               onPressed: () => _updatelink1_(),
             ),
             title: TextButton(
-              onPressed: () => _updatelink1(),
+              onPressed: () => _updatelink1_(),
               child: Row(
                 children: <Widget>[
                   Text(
@@ -145,9 +145,6 @@ class NotificationScreen extends StatelessWidget {
             ),
           ),
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => _updatelink4(),
       ),
     );
   }

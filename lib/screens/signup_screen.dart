@@ -145,7 +145,19 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 25),
+                const SizedBox(height: 15),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 8,
+                  ),
+                  child: const Text(
+                    "Add Profile Pic to Sign up",
+                    style: TextStyle(
+                      color: Colors.redAccent,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 15),
                 //username textfield
                 TextFieldInput(
                   labelText: 'Enter username',
