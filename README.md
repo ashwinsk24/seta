@@ -1,6 +1,6 @@
 # Seta
 
-A completely Responsive Community App- Works on Android! 
+A completely Responsive Community App - Works on Android and Web
 
 ## Features
 - Responsive Realtime UI
