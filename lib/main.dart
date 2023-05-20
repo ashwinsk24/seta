@@ -16,11 +16,11 @@ void main() async {
   if (kIsWeb) {
     await Firebase.initializeApp(
       options: const FirebaseOptions(
-        apiKey: 'AIzaSyBhQ9a9qlC6qh3wpbsdO9UfN9tiRlnKNnM',
-        appId: '1:391759904308:web:ddda3ed2585a084a125461',
-        messagingSenderId: '391759904308',
-        projectId: 'seta2022-9aaed',
-        storageBucket: "seta2022-9aaed.appspot.com",
+        apiKey: 'key',
+        appId: 'appId',
+        messagingSenderId: 'messageId',
+        projectId: 'projectId',
+        storageBucket: "bucketId",
       ),
     );
   } else {
